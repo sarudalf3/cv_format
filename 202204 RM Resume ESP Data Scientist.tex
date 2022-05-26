@@ -1,0 +1,420 @@
+%% If you are using \orcid or academicons
+%% icons, make sure you have the academicons
+%% option here, and compile with XeLaTeX
+%% or LuaLaTeX.
+% \documentclass[10pt,a4paper,academicons]{altacv}
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper,academicons]{altacv}
+
+%% AltaCV uses the fontawesome5 and academicon fonts and packages.
+%% See http://texdoc.net/pkg/fontawesome5 and http://texdoc.net/pkg/academicons for full list of symbols. 
+%% You MUST compile with XeLaTeX or LuaLaTeX if you want to use academicons.
+
+% Change the page layout if you need to
+\geometry{left=1.5cm,right=1.5cm,top=2cm,bottom=2cm,columnsep=1.2cm}
+\hyphenation{herramientas manifiesto finalic\'e programaci\'on reaseguros dashboards college
+clientes informaci\'on rentabilidad r\'apida propiciando habiendo continentes continuo torres
+constancia fundamentals operativos modelos campa\~nas Learning procesos interpersonales motivador ambientes
+analista inteligencia usando pandas realizado Valpara\'iso cargos con-su-mi-dor u-sando in-for-ma-ci\'on mo-de-los o-ri-en-ta-ci\'on}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+\usepackage{ifsym}
+\usepackage{ragged2e}
+\usepackage{fontspec}
+\usepackage{fontawesome}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Lato}
+\else
+  % If using pdflatex:
+  \usepackage[default]{lato}
+\fi
+
+
+%%%colors
+\definecolor{DodgerBlue}{HTML}{2E86C1}
+
+\colorlet{headingrule}{DodgerBlue}
+%\colorlet{subheading}{yellow}
+\colorlet{name}{black!90!white}
+\colorlet{accent}{black!68!white} %universities and worplaces
+\colorlet{tagline}{black!75!white} %actual position
+\colorlet{emphasis}{black!85!white} %education and positions
+
+\colorlet{body}{black}
+\colorlet{heading}{DodgerBlue}
+
+%Bullet points number
+\colorlet{point2}{black!70!white}
+\colorlet{point1}{white!88!black}
+\colorlet{image}{DodgerBlue}
+
+%\definecolor{VividPurple}{HTML}{000000}
+%\definecolor{SlateGrey}{HTML}{2E2E2E}
+%\definecolor{LightGrey}{HTML}{2E2E2E}
+
+%\definecolor{VividPurple}{HTML}{008080}
+%\definecolor{SlateGrey}{HTML}{2E2E2E}
+%\definecolor{LightGrey}{HTML}{666666}
+
+% Change some fonts, if necessary
+% \renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+% \renewcommand{\personalinfofont}{\footnotesize}
+% \renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+% \renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% sample.bib contains your publications
+%%\addbibresource{sample.bib}
+
+\begin{document}
+\name{Rub\'en Miranda Far\'ias}
+\tagline{{\LARGE Data Scientist}}
+% Cropped to square from https://en.wikipedia.org/wiki/Marissa_Mayer#/media/File:Marissa_Mayer_May_2014_(cropped).jpg, CC-BY 2.0
+%% You can add multiple photos on the left or right
+%\photoR{2.5cm}{mmayer-wikipedia-cc-by-2_0}
+% \photoL{2cm}{Yacht_High,Suitcase_High}
+\personalinfo{%
+  % Not all of these are required!
+  % You can add your own with \printinfo{symbol}{detail}
+  {\normalsize 
+  \email{ruben.miranda.f@gmail.com}
+  \phone{+56 9 4518 9655}
+  %\mailaddress{Coquimbo 1331, Santiago} \\%8330862
+  %\location{Nogales, Chile} 
+  %\href{tel:15555555555}{+1 555 555 5555}
+  %\NewInfoField{ID}{\faIdCard[regular]}%[https://gitlab.com/]
+  %\NewInfoField{birth}{\faBirthdayCake}%[https://gitlab.com/]
+  %\birth{36 a\~nos}
+  %\ID{RUT 15769287-9}
+  \linkedin{rubenmirandaf}
+  \homepage{sarudalf3.github.io} \\
+  \github{sarudalf3} % I'm just making this up though.
+  \twitter{@sarudalf}
+  %\tableau{rmiranda}
+  %{\color{image}\faAreaChart} \ \  \href{https://public.tableau.com/profile/rmiranda}{Tableau Public rmirand} \ \ \ \ \ \ \ \
+  \tumblr{sarudalf3}
+
+  %https://public.tableau.com/profile/ruben.miranda3848#!/  website public tableau
+  %https://www.coursera.org/user/96228acdf2702e29b746819e3010a2e9 coursera profile
+
+ 
+%   \orcid{orcid.org/0000-0000-0000-0000} % Obviously making this up too. If you want to use this field (and also other academicons symbols), add "academicons" option to \documentclass{altacv}
+  %% You MUST add the academicons option to \documentclass, then compile with LuaLaTeX or XeLaTeX, if you want to use \orcid or other academicons commands.
+  % \orcid{0000-0000-0000-0000}
+  %% You can add your own arbtrary detail with
+  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+  % \printinfo{\faPaw}{Hey ho!}
+  %% Or you can declare your own field with
+  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+}}
+%\faAreaChart
+%\aiCourseraSquare
+\makecvheader
+\medskip
+
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+% \AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.57}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+
+\cvsection{Experiencia}
+\cvevent{}{Consultor data analyst - GMN Group}{Sep 2021 -- Actual}{Remoto, Chile}
+{\justify Proyecto para BHP - Escondida. Automatic\'e reportes a Power BI. 
+Lider\'e proyectos de automatizaci\'on del dataflow de reportes usando como conexi\'on Snowflake en Power Bi. 
+Automatic\'e flujos de informaci\'on transformando bases de datos mediante scripts en Python}.\\
+{\justify {\bfseries Palabras clave: Python, Power BI, KPI's, dashboards}}
+
+\divider
+\smallskip
+
+\cvevent{}{Consultor data analyst - SMEC Chile}{Abr 2021 -- Ago 2021}{Remoto, Chile}
+{\justify Proyecto para Codelco - Chile. 
+Implement\'e reportes de gesti\'on de mantenimiento en Power BI, automatic\'e dashboards de gesti\'on de inventarios con conexi\'on
+a SAP BW, audit\'e el dataflow para el c\'alculo de KPi's en gesti\'on de mantenimiento de todas las divisiones de la corporaci\'on.}\\
+{\justify {\bfseries Palabras clave: Power BI, dashboards, SAP, cubos OLAP}}
+
+\divider
+\smallskip
+
+
+%\cvevent{Analista freelance en continua capacitaci\'on}{}{Ene 2020 -- Dic 2020}{Nogales, Chile}
+%{Realic\'e asesor\'ias en matem\'aticas y estad\'isticas avanzadas; finalic\'e diversas capacitaciones en las \'areas de visualizaci\'on de datos, \\programaci\'on en Python, y su uso en data science.\\ \vspace{0.15cm}
+%{\bfseries Palabras clave: Python, Tableau, Machine Learning, text mining \\
+%GCP, Capacitación online (Coursera)}}
+
+%\begin{itemize}
+%\item 
+%\end{itemize}
+%\divider
+%\smallskip
+
+%\cvevent{International Experience Canad\'a}{}{Jun 2018 -- Sep 2019}{Calgary AB, Canad\'a}
+%Ejecut\'e diversos oficios como participante del programa Working \& Holiday. Curs\'e varios programas de ingl\'es en la Universidad de Calgary, llegando a alcanzar un nivel B2+, seg\'un CEFR. \\ \vspace{0.15cm}
+%{\bfseries Palabras clave: Viajes y cultura, ingl\'es, habilidades comunicativas}
+
+%\divider
+%\smallskip
+
+\cvevent{}{Analista estad\'istico - Instituto Nacional de Estad\'isticas (INE)}{Oct 2016 -- Jun 2018}{Santiago, Chile}
+
+{\justify Coordin\'e el proceso de c\'alculo anal\'itico del \'indice de precios al consumidor (IPC). Dise\~ne reportes con
+identificación de puntos outliers. Implement\'e la migraci\'on de varios \'indices de precios en un servidor SAS.}\\
+{\justify {\bfseries Palabras clave: SAS, \'indices de precios, outliers analysis, muestreo}}
+
+\divider
+\smallskip
+%\newpage
+
+
+\cvevent{}{Analista actuarial - Chilena Consolidada}{Dic 2015 -- Oct 2016}{Santigo, Chile}
+
+{\justify Analic\'e informaci\'on e identiqu\'e causas que impactar\'on en la rentabilidad de seguros de rentas vitalicias. 
+Audit\'e el c\'alculo de las reservas t\'ecnicas seg\'un normativa local para seguros vida.}\\
+{\justify{\bfseries Palabras clave: MS Excel, seguros vida, rentas vitalicias, SAP}}
+
+\divider
+%\smallskip
+\newpage
+
+ \cvevent{}{Analista CRM Adquisiciones - VTR Globalcom}{Ago 2013 -- May 2015}{Santiago, Chile}
+
+{\justify Desarroll\'e y calibr\'e modelos supervisados para incrementar la venta de servicios adicionales a clientes.
+Determin\'e perfiles de clientes con mayor propensi\'on de desconectar servicios usando \'arboles de decisi\'on.
+Transform\'e bases de datos para utilizarlas como input de informaci\'on en campa\~nas comerciales.}\\
+{\justify {\bfseries Palabras clave: SPSS Modeler, Business Intelligence, modelos supervisados, text analysis, dashboards}}
+
+\divider
+\smallskip
+ 
+ \cvevent{}{Data analyst - EQUIFAX Chile}{Ago 2012 -- Ago 2013}{Santiago, Chile}
+
+{\justify Realic\'e extracci\'on y transformaci\'on de informaci\'on usando SQL Server. 
+ Estandaric\'e queries para limpiar datos con formato de texto. 
+ Us\'e diversos canales de envio de informaci\'on, enviando archivos en diversos formatos seg\'un requerimeintos del cliente.}\\  
+{\justify {\bfseries Palabras clave: SQL, text analysis, SPSS, FTP, SSIS}}
+
+\bigskip
+\medskip
+
+\cvsection{Perfeccionamiento}
+
+\begin{itemize}
+	\item \textbf{Full-Stack Python Bootcamp.} \\
+	Coding Dojo, graduado con cinturon negro, Sep 2021.
+	\item \textbf{Applied Data Science with Python - Specialization.} \\
+	Coursera, Dic 2020.
+	%\item \textbf{Mathematics for Machine Learning - Specialization.}\\
+	%Imperial College London, Coursera, Oct 2020.
+	\item \textbf{Data Visualization with Tableau - Specialization.}\\
+	Coursera, Oct 2020.	
+	%\item \textbf{Google Cloud Platform Big Data and Machine Learning \\ Fundamentals en Espa\~nol.}\\ Google Cloud, Coursera, Sep 2020.
+	\item \textbf{Neural Networks and Deep Learning.}\\
+	Coursera, Sep 2020.
+	\item \textbf{Python Programming 3 - Specialization.}\\
+	Coursera, Ago 2020. %\href{https://www.coursera.org/account/accomplishments/certificate/WGHLBBAG5N8Z}{Certificación}
+	%\item 	\textbf{Gesti\'on empresarial exitosa para Pymes} Coursera, 2020.
+	\item \textbf{Machine Learning.}\\ 
+	Coursera, Jun 2020. %\href{https://www.coursera.org/account/accomplishments/certificate/Q95HQWQG6LM6}{Certificación}
+	\item \textbf{English in common 5 - Level B1+ $\backslash$ B2+.} \\
+	University of Calgary, Canada, 2019. 60 Horas.
+	\item \textbf{English in common 4 - Level B1.} \\
+	University of Calgary, Canada, 2019. 60 Horas.
+	%\item \textbf{English in common 3 - Level A2+ $\backslash$ B1.}\\
+	%University of Calgary, Canada, 2018. 60 Horas.
+	\item \textbf{SAS Programming 3: Advanced tecniques and efficiencies.}\\ 
+	SAS Education, Chile, 2018. 16 Horas.
+	\item \textbf{Forecasting using SAS Software: A programming Approach.} \\
+	SAS Education, Chile, 2018. 16 Horas.
+	\item \textbf{SAS Programming for R users.} \\
+	SAS Education, Chile, 2018. 16 Horas.
+	\item \textbf{Econom\'ia industrial aplicada.} \\
+	Instituto Nacional de Estad\'isticas (INE), Chile, 2018.\\ 24 horas.
+	\item \textbf{Herramientas de comunicaci\'on efectiva.} \\
+	SEGIC, Universidad de Santiago de Chile (USACH), Chile, 2018. 16 horas.
+\end{itemize}
+\bigskip
+\bigskip
+* Puedes comprobar la informaci\'on de este resumen  \href{https://drive.google.com/drive/folders/1u0bYbx0pKRGKShkCB766mANb5ZWrbCzI?}{\textbf{\color{DodgerBlue} aqu\'i}}	
+
+%\colorlet{tagline}{SlateGrey}
+%\colorlet{heading}{VividPurple}
+%\colorlet{accent}{VividPurple}
+%\colorlet{emphasis}{SlateGrey}
+%\colorlet{body}{LightGrey}
+%\cvsection{A Day of My Life}
+
+% Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
+% \wheelchart{outer radius}{inner radius}{
+% comma-separated list of value/text width/color/detail}
+% Some ad-hoc tweaking to adjust the labels so that they don't overlap
+%\hspace*{-1em}  %% quick hack to move the wheelchart a bit left
+%\wheelchart{1.5cm}{0.5cm}{%
+%  10/13em/accent!30/Sleeping \& dreaming about work,
+%  25/9em/accent!60/Public resolving issues with Yahoo!\ investors,
+%  5/11em/accent!10/\footnotesize\\[1ex]New York \& San Francisco Ballet Jawbone board member,
+%  20/11em/accent!40/Spending time with family,
+%  5/8em/accent!20/\footnotesize Business development for Yahoo!\ after the Verizon acquisition,
+%  30/9em/accent/Showing Yahoo!\ \mbox{employees} that their work has meaning,
+%  5/8em/accent!20/Baking cupcakes
+%}
+
+% use ONLY \newpage if you want to force a page break for
+% ONLY the currentc column
+%\newpage
+
+%\cvsection{Publications}
+
+%\nocite{*}
+%\printbibliography[heading=pubtype,title={\printinfo{\faBook}{Books}},type=book]
+%\divider
+
+%\printbibliography[heading=pubtype,title={\printinfo{\faFile*[regular]}{Journal Articles}}, %type=article]
+
+%\divider
+
+%\printbibliography[heading=pubtype,title={\printinfo{\faUsers}{Conference %Proceedings}},type=inproceedings]
+
+%% Switch to the right column. This will now automatically move to the second
+%% page if the content is too long.
+\switchcolumn
+
+\cvsection{Resumen}
+{\justify Estad\'istico con +5 años de experiencia en cargos de analista y consultor en 
+áreas de inteligencia de negocios, operaciones y gestión de resultados.}\\
+
+{\justify Experiencia en resumir datos y visualizar resultados, implementar y calibrar
+ modelos de machine learning, transformar bases de datos y automatizar procesos.
+ Dominio en diversos softwares de modelación y gestión de datos, con nivel de ingl\'es alto.}\\
+
+{\justify H\'abil en espacios colaborativos, din\'amico, comprometido, proactivo, con orientación al aprendizaje y mejora continua.}\\
+
+%Estad\'istico, experiencia en bases de datos, modelos de regresi\'on, series de tiempo y algoritmos de machine learning; \'enfasis en herramientas efectivas de visualizaci\'on, automatizaci\'on de procesos y aprendizaje continuo en el campo de data science. Con m\'as de 5 a\~nos de experiencia, manifiesto una alta orientaci\'on a la mejora continua, r\'apida adaptaci\'on, propiciando espacios de colaboraci\'on y cohesi\'on.\\
+
+\bigskip
+\medskip
+
+\cvsection{Educaci\'on}
+\cvevent{Diplomado en ciencia de datos}{Universidad del desarrollo}{Nov 2021 -- May 2022}{Chile}
+\medskip
+\cvevent{Mag\'ister en estad\'istica}{Universidad de Valpara\'iso}{2010 -- 2012}{Valpara\'iso, Chile}
+\medskip
+\cvevent{Licenciatura en estad\'istica}{Pontificia Universidad Cat\'olica de Valpara\'iso}{2004 -- 2009}{Valpara\'iso, Chile}
+\medskip
+\cvevent{Programa de intercambio estudiantil}{Universidad Complutense de Madrid}{2007 Feb -- Jun}{Madrid, Espa\~na}
+
+\bigskip
+\medskip
+
+
+\cvsection{Idiomas}
+
+\cvskill{Espa\~nol - Nativo}{5}
+\cvskill{Ingl\'es - High Intermediate}{4}
+
+\newpage
+
+\cvsection{Habilidades}
+
+\cvtag{Comunicativo}
+\cvtag{Anal\'itico}\\
+\cvtag{Adaptaci\'on a cambios}
+\cvtag{Problem-solving}\\
+\cvtag{Aprendizaje continuo}
+\cvtag{Trabajo en equipo}
+
+\bigskip
+\medskip
+
+\cvtag{Programamming} 
+\cvtag{Time Series}\\
+\cvtag{Machine Learning}
+\cvtag{Data Visualization}\\
+\cvtag{Databases}
+\cvtag{Deep Learning}
+
+\bigskip
+\medskip
+
+
+%\cvsection{\'Areas de inter\'es}
+%\cvtag{Data Science}
+%\cvtag{Business Intelligence} \\
+%\cvtag{Econometr\'ia}
+%\cvtag{Consultoria} 
+%\cvtag{A.I.}\\
+%\cvtag{Validaci\'on de modelos}
+%\cvtag{Bases de datos}
+
+
+\cvsection{Softwares}
+
+\cvskill{Python}{4}
+\cvskill{R}{3}
+\cvskill{SAS/STATA/SPSS Modeler}{3}
+
+\medskip
+\cvskill{SQL/MySQL}{4}
+\cvskill{Hadoop}{2}
+
+\medskip
+\cvskill{Power BI}{4}
+\cvskill{Tableau}{3}
+
+\medskip
+\cvskill{HTML/CSS}{3}
+\cvskill{Git/Github}{3}
+
+\medskip
+\cvskill{Office 365}{4}
+\cvskill{\LaTeX}{4}
+\cvskill{Markdown}{3}
+\cvskill{SAP}{2}
+\cvskill{Linux}{2}
+
+%\cvsection{Life Philosophy}
+%\begin{quote}
+%``If you don't have any shadows, you're not standing in the light.''
+%\end{quote}
+
+\bigskip
+\smallskip
+
+\cvsection{Logros}
+
+\cvachievement{\faTrophy}{Becario Conicyt}{programa para estudios de mag\'ister en Chile, a\~no 2010}
+\cvachievement{\faGraduationCap}{Mejor titulado}{carrera de estad\'istica, a\~no 2010}
+
+\divider
+
+\cvachievement{\faPython}{Programaci\'on en Python}{Uso de las librer\'ias pandas, matplotlib, scikit-learn, django, Tensorflow}
+
+%\divider
+
+\cvachievement{\faChartPie}{Visualizaci\'on de datos}{\'Enfasis en detalles y utilizaci\'on de propiedades visuales preatentivas}
+
+\divider
+
+\cvachievement{\faPlaneDeparture}{Inspirador de viajes}{He aprendido de diversas culturas, habiendo recorrido 15 pa\'ises en 3 continentes}%%\hspace{0.8cm} \tumblr{sarudalf3}}
+
+\cvachievement{\faHiking}{Senderismo}{Amante de activades outdoors, he realizado traves\'ias por torres del Paine y Waterton lakes park}
+
+\end{paracol}
+
+\end{document}
