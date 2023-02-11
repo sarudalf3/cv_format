@@ -1,0 +1,357 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.6.5, 3 Nov 2022) written by LianTze Lim (liantze@gmail.com). Compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt, a4paper, ragged2e, withhyper, spanish]{altacv}
+\usepackage[T1]{fontenc}
+%% AltaCV uses the fontawesome5 and packages.
+%% See http://texdoc.net/pkg/fontawesome5 for full list of symbols.
+
+% Change the page layout if you need to
+\geometry{left=1.5cm,right=1.5cm,top=2cm,bottom=2cm,columnsep=1.2cm}
+
+\hyphenation{opera-ciones re-sul-ta-dos cluster pro-yec-tos de-sa-rro-llo}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% Change the colours if you want to
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{DarkPastelRed}{HTML}{450808}
+\definecolor{PastelRed}{HTML}{8F0D0D}
+\definecolor{GoldenEarth}{HTML}{E7D192}
+\definecolor{DodgerBlue}{HTML}{2E86C1}
+
+\colorlet{name}{black!90!white} %
+\colorlet{tagline}{black!75!white} %
+\colorlet{heading}{DodgerBlue} %
+\colorlet{headingrule}{DodgerBlue} %
+\colorlet{subheading}{PastelRed}
+\colorlet{accent}{black!68!white} %
+\colorlet{emphasis}{black!85!white} %
+\colorlet{image}{DodgerBlue} %
+\colorlet{body}{black} %
+\colorlet{icon}{DodgerBlue} %
+%Bullet points number
+\colorlet{point2}{black!70!white}
+\colorlet{point1}{white!88!black}
+\colorlet{image}{DodgerBlue}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want to use an author-year reference style like APA(6)
+%% for your publication list
+% \input{pubs-authoryear.cfg}
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want an originally numerical reference style like IEEE
+%% for your publication list
+%\input{pubs-num.cfg}
+
+%% sample.bib contains your publications
+%\addbibresource{sample.bib}
+
+\begin{document}
+\name{Rubén Miranda Farías}
+\tagline{\LARGE Data Scientist}
+%% You can add multiple photos on the left or right
+%\photoR{2.8cm}{Globe_High}
+% \photoL{2.5cm}{Yacht_High,Suitcase_High}
+
+\personalinfo{%
+	{\normalsize 
+  % Not all of these are required!
+  \mailaddress{ruben.miranda.f@gmail.com}
+  \phone{+56 9 4518 9655}
+  %\mailaddress{Coquimbo 1331, Santiago} \\%8330862
+  %\location{Nogales, Chile} 
+  \homepage{sarudalf3.github.io}
+  \linkedin{rmirandaf}\\
+  \github{sarudalf3}
+  \twitter{sarudalf}
+  %\orcid{0000-0000-0000-0000}
+  \tumblr{sarudalf3}
+
+  %https://public.tableau.com/profile/ruben.miranda3848#!/  website public tableau
+  %https://www.coursera.org/user/96228acdf2702e29b746819e3010a2e9 coursera profile
+
+  %% You can add your own arbitrary detail with
+  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+  % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+  %% Or you can declare your own field with
+  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+  % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+  % \gitlab{your_id}
+  %%
+  %% For services and platforms like Mastodon where there isn't a
+  %% straightforward relation between the user ID/nickname and the hyperlink,
+  %% you can use \printinfo directly e.g.
+  % \printinfo{\faMastodon}{@username@instace}[https://instance.url/@username]
+  %% But if you absolutely want to create new dedicated info fields for
+  %% such platforms, then use \NewInfoField* with a star:
+  % \NewInfoField*{mastodon}{\faMastodon}
+  %% then you can use \mastodon, with TWO arguments where the 2nd argument is
+  %% the full hyperlink.
+  % \mastodon{@username@instance}{https://instance.url/@username}
+}}
+
+\makecvheader
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+% \AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.57}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+\cvsection{Experiencia}
+\cvevent{}{Consultor data scientist - GMN Group}{Sep 2021 -- Actual}{Remoto, Chile}
+{\justify Proyecto para BHP - Escondida y Codelco Chile. Lideré proyectos de automatización de reportabilidad usando Snowflake (SQLite) como input de data en Power BI. Participé en el desarrollo en simular los ciclos de mtto. Div. El Teniente utilizando Python y SAP.}\\
+{\justify {\bfseries Palabras clave: Python, Power BI, SQLite, SAP}}
+
+\divider
+\smallskip
+
+\cvevent{}{Consultor data engineering - SMEC Chile}{Abr 2021 -- Ago 2021}{Remoto, Chile}
+{\justify Proyecto para Codelco - Chile. Implementé reportes de gestión de mtto. y automaticé dashboards de gestión de inventarios con conexión a SAP BW en Power BI; audité el dataflow en el proceso de cálculo de KPi's operativos en todas las divisiones de la corporación.}\\
+{\justify {\bfseries Palabras clave: Power BI, dataViz, SAP, cubos OLAP}}
+
+\divider
+\smallskip
+
+\cvevent{}{Analista estadístico - Instituto Nacional de Estadísticas (INE)}{Oct 2016 -- Jun 2018}{Santiago, Chile}
+
+{\justify Coordiné el proceso de cálculo analítico del índice de precios al consumidor (IPC); implementé reportes de identificación de precios outliers; Implementé la migración de varios índices de precios a un servidor SAS.}\\
+{\justify {\bfseries Palabras clave: SAS, índices de precios, outliers analysis, muestreo}}
+
+\divider
+\smallskip
+
+\cvevent{}{Analista actuarial - Chilena Consolidada}{Dic 2015 -- Oct 2016}{Santigo, Chile}
+
+{\justify Analicé información e identiqué causas que afectaron la rentabilidad de seguros de rentas vitalicias; audité el cálculo de las reservas técnicas según normativa local para seguros vida.}\\
+{\justify{\bfseries Palabras clave: MS Excel, seguros vida, rentas vitalicias, SAP}}
+
+\divider
+
+% use ONLY \newpage if you want to force a page break for
+% ONLY the current column
+\newpage
+
+ \cvevent{}{Analista CRM Adquisiciones - VTR Globalcom}{Ago 2013 -- May 2015}{Santiago, Chile}
+
+{\justify Desarrollé y calibré modelos supervisados para incrementar la tasa de venta upselling a clientes. Identifiqué perfiles de clientes con mayor tasa de desconexión para aplicar ofertas de retención. Transformé bases de datos para utilizarlas como input de información en campañas comerciales.}\\
+{\justify {\bfseries Palabras clave: SPSS Modeler, Business Intelligence, modelos supervisados, text minning, dataViz}}
+
+\divider
+\smallskip
+ 
+ \cvevent{}{Data analyst - EQUIFAX Chile}{Ago 2012 -- Ago 2013}{Santiago, Chile}
+
+{\justify Realicé extracción y transformación de información usando SQL Server. 
+ Estandaricé queries para transformar registros con formato de texto. 
+ Utilicé diversos canales de envio de información, enviando archivos en diversos formatos según requerimientos del cliente.}\\  
+{\justify {\bfseries Palabras clave: SQL, text analysis, SPSS, FTP, SSIS}}
+
+\bigskip
+\medskip
+
+
+\cvsection{Perfeccionamiento}
+
+\begin{itemize}
+	\item \textbf{Deep Learning - Specialization.} \\
+	Coursera, Dic 2022.
+	\item \textbf{Full-Stack Python Bootcamp.} \\
+	Coding Dojo, graduado con cinturon negro, Sep 2021.
+	\item \textbf{Applied Data Science with Python - Specialization.} \\
+	Coursera, Dic 2020.
+	%\item \textbf{Mathematics for Machine Learning - Specialization.}\\
+	%Imperial College London, Coursera, Oct 2020.
+	\item \textbf{Data Visualization with Tableau - Specialization.}\\
+	Coursera, Oct 2020.	
+	%\item \textbf{Google Cloud Platform Big Data and Machine Learning \\ Fundamentals en Espa\~nol.}\\ Google Cloud, Coursera, Sep 2020.
+	\item \textbf{Neural Networks and Deep Learning.}\\
+	Coursera, Sep 2020.
+	\item \textbf{Python Programming 3 - Specialization.}\\
+	Coursera, Ago 2020. %\href{https://www.coursera.org/account/accomplishments/certificate/WGHLBBAG5N8Z}{Certificación}
+	%\item 	\textbf{Gesti\'on empresarial exitosa para Pymes} Coursera, 2020.
+	\item \textbf{Machine Learning.}\\ 
+	Coursera, Jun 2020. %\href{https://www.coursera.org/account/accomplishments/certificate/Q95HQWQG6LM6}{Certificación}
+	\item \textbf{English in common 5 - Level B1+ $\backslash$ B2+.} \\
+	University of Calgary, Canada, 2019. 60 Horas.
+	\item \textbf{English in common 4 - Level B1.} \\
+	University of Calgary, Canada, 2019. 60 Horas.
+	%\item \textbf{English in common 3 - Level A2+ $\backslash$ B1.}\\
+	%University of Calgary, Canada, 2018. 60 Horas.
+	\item \textbf{SAS Programming 3: Advanced tecniques and efficiencies.}\\ 
+	SAS Education, Chile, 2018. 16 Horas.
+	\item \textbf{Forecasting using SAS Software: A programming Approach.} \\
+	SAS Education, Chile, 2018. 16 Horas.
+	\item \textbf{SAS Programming for R users.} \\
+	SAS Education, Chile, 2018. 16 Horas.
+	\item \textbf{Econom\'ia industrial aplicada.} \\
+	Instituto Nacional de Estad\'isticas (INE), Chile, 2018.\\ 24 horas.
+	\item \textbf{Herramientas de comunicaci\'on efectiva.} \\
+	SEGIC, Universidad de Santiago de Chile (USACH), Chile, 2018. 16 horas.
+\end{itemize}
+
+%\cvsection{A Day of My Life}
+% Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
+% \wheelchart{outer radius}{inner radius}{
+% comma-separated list of value/text width/color/detail}
+%\wheelchart{1.5cm}{0.5cm}{%
+%  6/8em/accent!30/{Sleep,\\beautiful sleep},
+%  3/8em/accent!40/Hopeful novelist by night,
+%  8/8em/accent!60/Daytime job,
+%  2/10em/accent/Sports and relaxation,
+%  5/6em/accent!20/Spending time with family
+%}
+
+%% Switch to the right column. This will now automatically move to the second
+%% page if the content is too long.
+\switchcolumn
+
+\cvsection{Resumen}
+{\justify Estadístico con +5 años de experiencia en cargos de analista y consultor en 
+áreas de inteligencia de negocios, investigación, operaciones y gestión de resultados. Nivel académico de magíster.}\\
+
+{\justify Experiencia en resumir datos y visualizar resultados, implementar y calibrar
+ modelos de machine learning, transformar bases de datos y automatizar procesos.
+ Dominio en diversos softwares de modelación y gestión de datos, con nivel de inglés alto.}\\
+
+{\justify Hábil en espacios colaborativos, dinámico, comprometido, proactivo, con orientación al aprendizaje y mejora continua.}\\
+
+\bigskip
+\medskip
+
+\cvsection{Educación}
+\cvevent{Diplomado en ciencia de datos}{Universidad del desarrollo}{2021 -- 2022}{Remoto, Chile}
+\medskip
+\cvevent{Magíster en estadística}{Universidad de Valparaíso}{2010 -- 2012}{Valparaíso, Chile}
+\medskip
+\cvevent{Licenciatura en estadística}{Pontificia Universidad Católica de Valparaíso}{2004 -- 2009}{Valparaíso, Chile}
+\medskip
+\cvevent{Programa de intercambio estudiantil}{Universidad Complutense de Madrid}{2007 Feb -- Jun}{Madrid, España}
+
+\bigskip
+\medskip
+
+
+\cvsection{Idiomas}
+
+\cvskill{Español - Nativo}{5}
+\cvskill{Inglés - High Intermediate}{4}
+
+\newpage
+
+\cvsection{Habilidades}
+
+\cvtag{Comunicativo}
+\cvtag{Analítico}\\
+\cvtag{Adaptación a cambios}
+\cvtag{Problem-solving}\\
+\cvtag{Aprendizaje continuo}
+\cvtag{Trabajo en equipo}
+
+\bigskip
+\medskip
+
+\cvtag{Programamming} 
+\cvtag{Time Series}\\
+\cvtag{Machine Learning}
+\cvtag{Data Visualization}\\
+\cvtag{Databases}
+\cvtag{Deep Learning}
+
+\bigskip
+\medskip
+
+\cvsection{Softwares}
+
+\cvskill{Python}{4}
+\cvskill{R}{3}
+\cvskill{SAS/STATA/SPSS Modeler}{3}
+
+\medskip
+\cvskill{SQL/MySQL}{4}
+\cvskill{Hadoop}{2}
+
+\medskip
+\cvskill{Power BI}{4}
+\cvskill{Tableau}{3}
+
+\medskip
+\cvskill{HTML/CSS}{3}
+\cvskill{Git/Github}{3}
+
+\medskip
+\cvskill{Office 365}{4}
+\cvskill{\LaTeX}{4}
+\cvskill{Markdown}{3}
+\cvskill{SAP}{2}
+\cvskill{Linux}{2}
+
+\bigskip
+\smallskip
+
+\cvsection{Logros}
+
+\cvachievement{\faTrophy}{Becario Conicyt}{programa para estudios de magíster en Chile, año 2010}
+\cvachievement{\faGraduationCap}{Mejor titulado}{carrera de estadística, año 2010}
+
+\divider
+
+\cvachievement{\faCode}{Programación en Python y R}{Python: pandas, matplotlib, scikit-learn, django, Tensorflow; R: stats, graph, cluster, glm}
+
+\cvachievement{\faChartLine}{Visualización de datos}{Énfasis en detalles y utilización de propiedades visuales preatentivas}
+
+\divider
+
+\cvachievement{\faPlaneDeparture}{Inspirador de viajes}{He aprendido de diversas culturas, habiendo recorrido 15 países en 3 continentes}%%\hspace{0.8cm} \tumblr{sarudalf3}}
+
+\cvachievement{\faHiking}{Senderismo}{Amante de activades outdoors, he realizado travesías por torres del Paine y Waterton lakes park}
+
+
+\end{paracol}
+\end{document}
